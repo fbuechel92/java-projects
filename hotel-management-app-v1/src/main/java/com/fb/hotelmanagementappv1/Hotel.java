@@ -1,11 +1,14 @@
 package com.fb.hotelmanagementappv1;
 
+import java.util.List;
+
 public class Hotel {
     private int id;
     private String name;
     private String address;
     private String telephoneNumber;
     private int numberOfRooms;
+    private List<Room> rooms;
 
     //Getter Methods for get requests
     private int getId(){
@@ -28,5 +31,8 @@ public class Hotel {
         return numberOfRooms;
     }
 
+    private List<Room> getRooms(){
+        return rooms;
+    }
     //Setter Methods not included for now. Do I need them?
 }
