@@ -1,5 +1,6 @@
 package com.fb.hotelmanagementappv1;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Hotel {
@@ -9,6 +10,16 @@ public class Hotel {
     private String telephoneNumber;
     private int numberOfRooms;
     private List<Room> rooms;
+
+    //Constructor
+    public Hotel(int id, String name, String address, String telephoneNumber, int numberOfRooms){
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.telephoneNumber = telephoneNumber;
+        this.numberOfRooms = numberOfRooms;
+        this.rooms = new ArrayList<>();
+    }
 
     //Getter Methods for get requests
     private int getId(){
