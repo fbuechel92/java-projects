@@ -7,6 +7,15 @@ public class Room {
     private boolean hasBalcony;
     private boolean hasTV;
 
+    //Constructor
+    public Room(int id, int roomSize, int numberOfBeds, boolean hasBalcony, boolean hasTV){
+        this.id = id;
+        this.roomSize = roomSize;
+        this.numberOfBeds = numberOfBeds;
+        this.hasBalcony = hasBalcony;
+        this.hasTV = hasTV;
+    }
+
     //Getter methods
     private int getId(){
         return id;
