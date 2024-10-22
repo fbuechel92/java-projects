@@ -1,4 +1,4 @@
-package com.fb.hotelmanagementappv1;
+package com.fb.hotelmanagementappv1.models;
 
 public class Room {
     private int id;
