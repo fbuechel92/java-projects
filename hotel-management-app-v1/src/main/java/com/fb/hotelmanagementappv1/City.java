@@ -6,7 +6,6 @@ import java.util.ArrayList;
 public class City {
     private int id;
     private String name;
-    private List<Hotel> hotels;
 
     //Constructor
     public City(int id, String name){
@@ -22,9 +21,5 @@ public class City {
 
     private String getName(){
         return name;
-    }
-
-    private List<Hotel> getHotels(){
-        return hotels;
     }
 }
