@@ -1,7 +1,4 @@
-package com.fb.hotelmanagementappv1;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.fb.hotelmanagementappv1.models;
 
 public class Hotel {
     private int id;
