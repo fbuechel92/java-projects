@@ -11,11 +11,11 @@ public class City {
     }
 
     //Getter methods
-    private int getId(){
+    public int getId(){
         return id;
     }
 
-    private String getName(){
+    public String getName(){
         return name;
     }
 }

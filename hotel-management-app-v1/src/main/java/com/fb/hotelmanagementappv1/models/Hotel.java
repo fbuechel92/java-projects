@@ -17,23 +17,23 @@ public class Hotel {
     }
 
     //Getter Methods for get requests
-    private int getId(){
+    public int getId(){
         return id;
     }
 
-    private String getName(){
+    public String getName(){
         return name;
     }
 
-    private String getAddress(){
+    public String getAddress(){
         return address;
     }
 
-    private String getTelephoneNumber(){
+    public String getTelephoneNumber(){
         return telephoneNumber;
     }
 
-    private int getNumberOfRooms(){
+    public int getNumberOfRooms(){
         return numberOfRooms;
     }
 }

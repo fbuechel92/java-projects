@@ -19,27 +19,27 @@ public class Room {
     }
 
     //Getter methods
-    private int getId(){
+    public int getId(){
         return id;
     }
 
-    private boolean getIsOccupied(){
+    public boolean getIsOccupied(){
         return isOccupied;
     }
 
-    private int getRoomSize(){
+    public int getRoomSize(){
         return roomSize;
     }
 
-    private int getNumberOfBeds(){
+    public int getNumberOfBeds(){
         return numberOfBeds;
     }
 
-    private boolean getHasBalcony(){
+    public boolean getHasBalcony(){
         return hasBalcony;
     }
 
-    private boolean getHasTV(){
+    public boolean getHasTV(){
         return hasTV;
     }
 }
