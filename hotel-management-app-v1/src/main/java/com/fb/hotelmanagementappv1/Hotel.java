@@ -9,7 +9,6 @@ public class Hotel {
     private String address;
     private String telephoneNumber;
     private int numberOfRooms;
-    private List<Room> rooms;
 
     //Constructor
     public Hotel(int id, String name, String address, String telephoneNumber, int numberOfRooms){
@@ -18,7 +17,6 @@ public class Hotel {
         this.address = address;
         this.telephoneNumber = telephoneNumber;
         this.numberOfRooms = numberOfRooms;
-        this.rooms = new ArrayList<>();
     }
 
     //Getter Methods for get requests
@@ -41,9 +39,4 @@ public class Hotel {
     private int getNumberOfRooms(){
         return numberOfRooms;
     }
-
-    private List<Room> getRooms(){
-        return rooms;
-    }
-    //Setter Methods not included for now. Do I need them?
 }
