@@ -7,15 +7,17 @@ public class Room {
     private int numberOfBeds;
     private boolean hasBalcony;
     private boolean hasTV;
+    private int hotelId;
 
     //Constructor
-    public Room(int id, boolean isOccupied, int roomSize, int numberOfBeds, boolean hasBalcony, boolean hasTV){
+    public Room(int id, boolean isOccupied, int roomSize, int numberOfBeds, boolean hasBalcony, boolean hasTV, int hotelId){
         this.id = id;
         this.isOccupied = isOccupied;
         this.roomSize = roomSize;
         this.numberOfBeds = numberOfBeds;
         this.hasBalcony = hasBalcony;
         this.hasTV = hasTV;
+        this.hotelId = hotelId;
     }
 
     //Getter methods
@@ -41,5 +43,9 @@ public class Room {
 
     public boolean getHasTV(){
         return hasTV;
+    }
+
+    public int getHotelId(){
+        return hotelId;
     }
 }
