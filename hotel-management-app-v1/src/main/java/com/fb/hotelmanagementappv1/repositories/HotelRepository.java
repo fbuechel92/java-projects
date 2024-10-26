@@ -29,4 +29,15 @@ public class HotelRepository {
     public List<Hotel> getAllHotels(){
         return hotels;
     }
+
+    public List<Hotel> getHotelsByCityId(int paramCityId){
+        List<Hotel> hotelList = new ArrayList<>();
+
+        for (Hotel hotel:hotels){
+            if (hotel.getCityId() == paramCityId){
+                hotelList.add(hotel);
+            }
+        }
+        return hotelList;
+    }
 }
