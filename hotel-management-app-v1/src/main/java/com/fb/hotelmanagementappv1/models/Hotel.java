@@ -6,14 +6,16 @@ public class Hotel {
     private String address;
     private String telephoneNumber;
     private int numberOfRooms;
+    private int cityId;
 
     //Constructor
-    public Hotel(int id, String name, String address, String telephoneNumber, int numberOfRooms){
+    public Hotel(int id, String name, String address, String telephoneNumber, int numberOfRooms, int cityId){
         this.id = id;
         this.name = name;
         this.address = address;
         this.telephoneNumber = telephoneNumber;
         this.numberOfRooms = numberOfRooms;
+        this.cityId = cityId;
     }
 
     //Getter Methods for get requests
@@ -35,5 +37,9 @@ public class Hotel {
 
     public int getNumberOfRooms(){
         return numberOfRooms;
+    }
+
+    public int getCityId(){
+        return cityId;
     }
 }
