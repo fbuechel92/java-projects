@@ -3,7 +3,9 @@ package com.fb.hotelmanagementappv1.repositories;
 import com.fb.hotelmanagementappv1.models.Room;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class RoomRepository {
     private List<Room> rooms;
 
