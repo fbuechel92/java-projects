@@ -25,7 +25,7 @@ public class Room {
         return id;
     }
 
-    public boolean getIsOccupied(){
+    public boolean isOccupied(){
         return isOccupied;
     }
 
@@ -37,15 +37,20 @@ public class Room {
         return numberOfBeds;
     }
 
-    public boolean getHasBalcony(){
+    public boolean hasBalcony(){
         return hasBalcony;
     }
 
-    public boolean getHasTV(){
+    public boolean hasTV(){
         return hasTV;
     }
 
     public int getHotelId(){
         return hotelId;
+    }
+
+    //Setter Methods
+    public void setOccupied(boolean paramIsOccupied){
+        this.isOccupied = paramIsOccupied;
     }
 }
