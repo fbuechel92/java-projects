@@ -42,4 +42,12 @@ public class RoomRepository {
         }
         return roomList;
     }
+
+    public void updateOccupied(int roomId, boolean paramOccupied){
+        for (Room room:rooms){
+            if (room.getId() == roomId){
+                room.setOccupied(paramOccupied);
+            }
+        }
+    }
 }
