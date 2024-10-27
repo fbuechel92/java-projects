@@ -9,36 +9,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService {
+public class ManagementService {
     private HotelRepository hotelRepository;
     private RoomRepository roomRepository;
 
     //Constructors
     @Autowired
-    public UserService(HotelRepository hotelRepository, RoomRepository roomRepository) {
+    public ManagementService(HotelRepository hotelRepository, RoomRepository roomRepository) {
         this.hotelRepository = hotelRepository;
         this.roomRepository = roomRepository;
     }
 
-    //Hotel-related Methods
-    public Hotel getHotelById(int hotelId){
+    //Methods
+    public Hotel getHotelbyId(int hotelId){
         return hotelRepository.getHotel(hotelId);
     }
 
-    public List<Hotel> getHotelsByCityId(int cityId){
-        return hotelRepository.getHotelsByCityId(cityId);
-    }
-
-    public List<Hotel> getAllHotels(){
-        return hotelRepository.getAllHotels();
-    }
-
-    //Room-related Methods
-    public Room getRoomById(int roomId){
-        return roomRepository.getRoom(roomId);
-    }
-
-    public List<Room> getRoomsByHotelId(int hotelId){
+    public List<Room> getRoomStatusesByHotelId(int hotelId){
         return roomRepository.getRoomsByHotelId(hotelId);
     }
 
