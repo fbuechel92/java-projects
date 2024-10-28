@@ -14,10 +14,6 @@ public class CityRepository {
     private DataInitializationService dataInitializationService;
 
     //Constructor
-    public CityRepository(){
-        this.cities = new ArrayList<>();
-    }
-
     @Autowired
     public CityRepository(DataInitializationService dataInitializationService){
         this.dataInitializationService = dataInitializationService;

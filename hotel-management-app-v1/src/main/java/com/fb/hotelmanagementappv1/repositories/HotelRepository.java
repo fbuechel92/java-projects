@@ -13,10 +13,6 @@ public class HotelRepository {
     private DataInitializationService dataInitializationService;
 
     //Constructor
-    public HotelRepository(){
-        this.hotels = new ArrayList<>();
-    }
-
     @Autowired
     public HotelRepository(DataInitializationService dataInitializationService){
         this.dataInitializationService = dataInitializationService;
