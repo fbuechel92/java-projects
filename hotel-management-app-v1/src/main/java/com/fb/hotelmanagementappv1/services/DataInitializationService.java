@@ -153,19 +153,6 @@ public class DataInitializationService {
         rooms.add(new Room(48, false, 40, 3, false, true, 10));
         rooms.add(new Room(49, true, 50, 4, true, false, 10));
         rooms.add(new Room(50, false, 60, 1, false, true, 10));
-        // Add more rooms for other hotels as needed
-        return rooms;
-    }
-
-    public List<City> getInitializationCities() {
-        return cities;
-    }
-
-    public List<Hotel> getInitializationHotels() {
-        return hotels;
-    }
-
-    public List<Room> getInitializationRooms() {
         return rooms;
     }
 }
