@@ -16,6 +16,7 @@ public class HotelRepository {
     @Autowired
     public HotelRepository(DataInitializationService dataInitializationService){
         this.dataInitializationService = dataInitializationService;
+        this.hotels = new ArrayList<>();
     }
 
     //Data Initialization

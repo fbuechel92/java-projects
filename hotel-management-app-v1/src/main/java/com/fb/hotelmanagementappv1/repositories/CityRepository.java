@@ -17,6 +17,7 @@ public class CityRepository {
     @Autowired
     public CityRepository(DataInitializationService dataInitializationService){
         this.dataInitializationService = dataInitializationService;
+        this.cities = new ArrayList<>();
     }
 
     //Data Initialization

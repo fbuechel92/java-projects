@@ -17,6 +17,7 @@ public class RoomRepository {
     @Autowired
     public RoomRepository(DataInitializationService dataInitializationService){
         this.dataInitializationService = dataInitializationService;
+        this.rooms = new ArrayList<>();
     }
 
     //Data Initialization
