@@ -1,17 +1,32 @@
 package com.fb.hotelmanagementappv1.repositories;
 
 import com.fb.hotelmanagementappv1.models.Room;
+import com.fb.hotelmanagementappv1.services.DataInitializationService;
+import jakarta.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class RoomRepository {
     private List<Room> rooms;
+    private DataInitializationService dataInitializationService;
 
     //Constructor
     public RoomRepository(){
         this.rooms = new ArrayList<>();
+    }
+
+    @Autowired
+    public RoomRepository(DataInitializationService dataInitializationService){
+        this.dataInitializationService = dataInitializationService;
+    }
+
+    //Data Initialization
+    @PostConstruct
+    public void roomDataInitialization(){
+        this.rooms = dataInitializationService.getInitializationRoomData();
     }
 
     //Methods
