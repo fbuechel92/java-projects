@@ -1,4 +1,4 @@
-package com.fb.hotelmanagementappv1;
+package com.fb.hotelApp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

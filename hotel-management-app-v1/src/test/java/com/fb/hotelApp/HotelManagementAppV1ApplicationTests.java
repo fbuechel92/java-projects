@@ -1,4 +1,4 @@
-package com.fb.hotelmanagementappv1;
+package com.fb.hotelApp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
