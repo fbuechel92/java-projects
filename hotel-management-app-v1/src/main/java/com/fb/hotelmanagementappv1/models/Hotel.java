@@ -1,5 +1,7 @@
 package com.fb.hotelmanagementappv1.models;
 
+import java.util.List;
+
 public class Hotel {
     private int id;
     private String name;
@@ -7,6 +9,7 @@ public class Hotel {
     private String telephoneNumber;
     private int numberOfRooms;
     private int cityId;
+    private List<Room> rooms;
 
     //Constructor
     public Hotel(int id, String name, String address, String telephoneNumber, int numberOfRooms, int cityId){
