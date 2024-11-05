@@ -1,26 +1,26 @@
 package com.fb.hotelmanagementappv1.repositories;
 
+import com.fb.hotelmanagementappv1.dataSource.DataInititalization;
 import com.fb.hotelmanagementappv1.models.City;
-import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class CityRepository {
-    private List<City> cities;
+    private DataInititalization dataInititalization;
 
     //Constructor
-    public CityRepository(){
-        this.cities = new ArrayList<>();
+    public CityRepository(DataInititalization dataInititalization){
+        this.dataInititalization = dataInititalization;
     }
 
     //Methods
     public void addCity(City paramCity){
-        cities.add(paramCity);
+        dataInititalization.getCities().add(paramCity);
     }
 
     public City getCity(int id){
-        for (City city : cities) {
+        for (City city : dataInititalization.getCities()) {
             if (city.getId() == id) {
                 return city;
             }
@@ -29,6 +29,6 @@ public class CityRepository {
     }
 
     public List<City> getAllCities(){
-        return cities;
+        return dataInititalization.getCities();
     }
 }
