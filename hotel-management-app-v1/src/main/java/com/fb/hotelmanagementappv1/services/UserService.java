@@ -1,31 +1,44 @@
-package com.fb.hotelApp.services;
+package com.fb.hotelmanagementappv1.services;
 
-import com.fb.hotelApp.models.Hotel;
-import com.fb.hotelApp.models.Room;
-import com.fb.hotelApp.repositories.HotelRepository;
-import com.fb.hotelApp.repositories.RoomRepository;
+import com.fb.hotelmanagementappv1.models.Hotel;
+import com.fb.hotelmanagementappv1.models.Room;
+import com.fb.hotelmanagementappv1.repositories.HotelRepository;
+import com.fb.hotelmanagementappv1.repositories.RoomRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ManagementService {
+public class UserService {
     private HotelRepository hotelRepository;
     private RoomRepository roomRepository;
 
     //Constructors
     @Autowired
-    public ManagementService(HotelRepository hotelRepository, RoomRepository roomRepository) {
+    public UserService(HotelRepository hotelRepository, RoomRepository roomRepository) {
         this.hotelRepository = hotelRepository;
         this.roomRepository = roomRepository;
     }
 
-    //Methods
-    public Hotel getHotelbyId(int hotelId){
+    //Hotel-related Methods
+    public Hotel getHotelById(int hotelId){
         return hotelRepository.getHotel(hotelId);
     }
 
-    public List<Room> getRoomStatusesByHotelId(int hotelId){
+    public List<Hotel> getHotelsByCityId(int cityId){
+        return hotelRepository.getHotelsByCityId(cityId);
+    }
+
+    public List<Hotel> getAllHotels(){
+        return hotelRepository.getAllHotels();
+    }
+
+    //Room-related Methods
+    public Room getRoomById(int roomId){
+        return roomRepository.getRoom(roomId);
+    }
+
+    public List<Room> getRoomsByHotelId(int hotelId){
         return roomRepository.getRoomsByHotelId(hotelId);
     }
 

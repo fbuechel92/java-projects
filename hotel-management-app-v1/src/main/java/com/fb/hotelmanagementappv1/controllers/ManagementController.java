@@ -1,8 +1,8 @@
-package com.fb.hotelApp.controllers;
+package com.fb.hotelmanagementappv1.controllers;
 
-import com.fb.hotelApp.models.Hotel;
-import com.fb.hotelApp.models.Room;
-import com.fb.hotelApp.services.ManagementService;
+import com.fb.hotelmanagementappv1.models.Hotel;
+import com.fb.hotelmanagementappv1.models.Room;
+import com.fb.hotelmanagementappv1.services.ManagementService;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
