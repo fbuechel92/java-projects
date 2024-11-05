@@ -1,7 +1,6 @@
 package com.fb.hotelmanagementappv1.repositories;
 
 import com.fb.hotelmanagementappv1.models.Room;
-import com.fb.hotelmanagementappv1.services.DataInitializationService;
 import jakarta.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,19 +10,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class RoomRepository {
     private List<Room> rooms;
-    private DataInitializationService dataInitializationService;
 
     //Constructor
-    @Autowired
-    public RoomRepository(DataInitializationService dataInitializationService){
-        this.dataInitializationService = dataInitializationService;
+    public RoomRepository(){
         this.rooms = new ArrayList<>();
-    }
-
-    //Data Initialization
-    @PostConstruct
-    public void roomDataInitialization(){
-        this.rooms = dataInitializationService.getInitializationRoomData();
     }
 
     //Methods

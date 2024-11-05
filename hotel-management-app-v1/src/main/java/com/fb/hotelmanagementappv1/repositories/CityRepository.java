@@ -1,7 +1,6 @@
 package com.fb.hotelmanagementappv1.repositories;
 
 import com.fb.hotelmanagementappv1.models.City;
-import com.fb.hotelmanagementappv1.services.DataInitializationService;
 import jakarta.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,22 +10,13 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class CityRepository {
     private List<City> cities;
-    private DataInitializationService dataInitializationService;
 
     //Constructor
-    @Autowired
-    public CityRepository(DataInitializationService dataInitializationService){
-        this.dataInitializationService = dataInitializationService;
+    public CityRepository(){
         this.cities = new ArrayList<>();
     }
 
-    //Data Initialization
-    @PostConstruct
-    public void cityDataInitialization() {
-        this.cities = dataInitializationService.getInitializationCityData();
-    }
-
-        //Methods
+    //Methods
     public void addCity(City paramCity){
         cities.add(paramCity);
     }
