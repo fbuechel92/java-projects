@@ -1,8 +1,8 @@
-package com.fb.hotelmanagementappv1.services;
+package com.fb.hotelApp.services;
 
-import com.fb.hotelmanagementappv1.models.City;
-import com.fb.hotelmanagementappv1.models.Hotel;
-import com.fb.hotelmanagementappv1.models.Room;
+import com.fb.hotelApp.models.City;
+import com.fb.hotelApp.models.Hotel;
+import com.fb.hotelApp.models.Room;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
-package com.fb.hotelmanagementappv1.repositories;
-import com.fb.hotelmanagementappv1.models.Hotel;
-import com.fb.hotelmanagementappv1.services.DataInitializationService;
+package com.fb.hotelApp.repositories;
+import com.fb.hotelApp.models.Hotel;
+import com.fb.hotelApp.services.DataInitializationService;
 import jakarta.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;

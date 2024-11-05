@@ -1,8 +1,8 @@
-package com.fb.hotelmanagementappv1.controllers;
+package com.fb.hotelApp.controllers;
 
-import com.fb.hotelmanagementappv1.models.Hotel;
-import com.fb.hotelmanagementappv1.models.Room;
-import com.fb.hotelmanagementappv1.services.UserService;
+import com.fb.hotelApp.models.Hotel;
+import com.fb.hotelApp.models.Room;
+import com.fb.hotelApp.services.UserService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
