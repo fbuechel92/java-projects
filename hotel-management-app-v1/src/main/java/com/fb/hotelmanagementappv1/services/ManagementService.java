@@ -22,16 +22,16 @@ public class ManagementService {
 
     //Methods
     public Hotel getHotelbyId(int hotelId){
-        return hotelRepository.getHotel(hotelId);
+        return hotelRepository.findHotelById(hotelId);
     }
 
     public List<Room> getRoomStatusesByHotelId(int hotelId){
-        return roomRepository.getRoomsByHotelId(hotelId);
+        return roomRepository.findRoomsByHotelId(hotelId);
     }
 
     //Booking-related Methods
     public String bookRoom(int roomId) {
-        Room room = roomRepository.getRoom(roomId);
+        Room room = roomRepository.findRoomById(roomId);
 
         if (room == null) {
             return String.format("Room %d does not exist.", roomId);
@@ -44,7 +44,7 @@ public class ManagementService {
     }
 
     public String cancelRoom(int roomId) {
-        Room room = roomRepository.getRoom(roomId);
+        Room room = roomRepository.findRoomById(roomId);
 
         if (room == null) {
             return String.format("Room %d does not exist.", roomId);
