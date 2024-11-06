@@ -1,38 +1,27 @@
 package com.fb.hotelmanagementappv1.repositories;
 
+import com.fb.hotelmanagementappv1.dataSource.DataInititalization;
 import com.fb.hotelmanagementappv1.models.Room;
-import com.fb.hotelmanagementappv1.services.DataInitializationService;
-import jakarta.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class RoomRepository {
-    private List<Room> rooms;
-    private DataInitializationService dataInitializationService;
+    private DataInititalization dataInititalization;
 
     //Constructor
-    @Autowired
-    public RoomRepository(DataInitializationService dataInitializationService){
-        this.dataInitializationService = dataInitializationService;
-        this.rooms = new ArrayList<>();
-    }
-
-    //Data Initialization
-    @PostConstruct
-    public void roomDataInitialization(){
-        this.rooms = dataInitializationService.getInitializationRoomData();
+    public RoomRepository(DataInititalization dataInititalization){
+        this.dataInititalization = dataInititalization;
     }
 
     //Methods
     public void addRoom(Room paramRoom){
-        rooms.add(paramRoom);
+        dataInititalization.getRooms().add(paramRoom);
     }
 
     public Room getRoom(int id){
-        for (Room room:rooms){
+        for (Room room:dataInititalization.getRooms()){
             if (room.getId() == id){
                 return room;
             }
@@ -41,13 +30,13 @@ public class RoomRepository {
     }
 
     public List<Room> getAllRooms(){
-        return rooms;
+        return dataInititalization.getRooms();
     }
 
     public List<Room> getRoomsByHotelId(int paramHotelId){
         List<Room> roomList = new ArrayList<>();
 
-        for (Room room:rooms){
+        for (Room room:dataInititalization.getRooms()){
             if (room.getHotelId() == paramHotelId){
                 roomList.add(room);
             }
@@ -56,7 +45,7 @@ public class RoomRepository {
     }
 
     public void updateOccupied(int roomId, boolean paramOccupied){
-        for (Room room:rooms){
+        for (Room room:dataInititalization.getRooms()){
             if (room.getId() == roomId){
                 room.setOccupied(paramOccupied);
             }

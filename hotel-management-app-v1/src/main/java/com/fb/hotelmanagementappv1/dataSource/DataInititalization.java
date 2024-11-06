@@ -1,4 +1,4 @@
-package com.fb.hotelmanagementappv1.services;
+package com.fb.hotelmanagementappv1.dataSource;
 
 import com.fb.hotelmanagementappv1.models.City;
 import com.fb.hotelmanagementappv1.models.Hotel;
@@ -9,13 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class DataInitializationService {
+public class DataInititalization {
 
     private List<City> cities;
     private List<Hotel> hotels;
     private List<Room> rooms;
 
-    public DataInitializationService() {
+    public DataInititalization() {
         cities = initializeCities();
         hotels = initializeHotels();
         rooms = initializeRooms();
@@ -157,15 +157,15 @@ public class DataInitializationService {
     }
 
     //Methods to access the initialized data
-    public List<Hotel> getInitializationHotelData(){
+    public List<Hotel> getHotels(){
         return hotels;
     }
 
-    public List<Room> getInitializationRoomData(){
+    public List<Room> getRooms(){
         return rooms;
     }
 
-    public List<City> getInitializationCityData(){
+    public List<City> getCities(){
         return cities;
     }
 }

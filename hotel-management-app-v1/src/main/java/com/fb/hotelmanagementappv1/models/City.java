@@ -1,8 +1,11 @@
 package com.fb.hotelmanagementappv1.models;
 
+import java.util.List;
+
 public class City {
     private int id;
     private String name;
+    private List<Hotel> hotels;
 
     //Constructor
     public City(int id, String name){
