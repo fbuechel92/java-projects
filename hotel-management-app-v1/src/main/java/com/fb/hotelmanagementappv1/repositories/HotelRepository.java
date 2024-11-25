@@ -16,11 +16,11 @@ public class HotelRepository {
     }
 
     //Methods
-    public void addHotel(Hotel paramHotel){
+    public void saveHotel(Hotel paramHotel){
         dataInititalization.getHotels().add(paramHotel);
     }
 
-    public Hotel getHotel(int id){
+    public Hotel findHotelById(int id){
         for (Hotel hotel:dataInititalization.getHotels()){
             if (hotel.getId() == id){
                 return hotel;
@@ -29,11 +29,11 @@ public class HotelRepository {
         return null;
     }
 
-    public List<Hotel> getAllHotels(){
+    public List<Hotel> findAllHotels(){
         return dataInititalization.getHotels();
     }
 
-    public List<Hotel> getHotelsByCityId(int paramCityId){
+    public List<Hotel> findHotelsByCityId(int paramCityId){
         List<Hotel> hotelList = new ArrayList<>();
 
         for (Hotel hotel:dataInititalization.getHotels()){

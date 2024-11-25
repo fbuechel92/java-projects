@@ -22,29 +22,29 @@ public class UserService {
 
     //Hotel-related Methods
     public Hotel getHotelById(int hotelId){
-        return hotelRepository.getHotel(hotelId);
+        return hotelRepository.findHotelById(hotelId);
     }
 
     public List<Hotel> getHotelsByCityId(int cityId){
-        return hotelRepository.getHotelsByCityId(cityId);
+        return hotelRepository.findHotelsByCityId(cityId);
     }
 
     public List<Hotel> getAllHotels(){
-        return hotelRepository.getAllHotels();
+        return hotelRepository.findAllHotels();
     }
 
     //Room-related Methods
     public Room getRoomById(int roomId){
-        return roomRepository.getRoom(roomId);
+        return roomRepository.findRoomById(roomId);
     }
 
     public List<Room> getRoomsByHotelId(int hotelId){
-        return roomRepository.getRoomsByHotelId(hotelId);
+        return roomRepository.findRoomsByHotelId(hotelId);
     }
 
     //Booking-related Methods
     public String bookRoom(int roomId) {
-        Room room = roomRepository.getRoom(roomId);
+        Room room = roomRepository.findRoomById(roomId);
 
         if (room == null) {
             return String.format("Room %d does not exist.", roomId);
@@ -57,7 +57,7 @@ public class UserService {
     }
 
     public String cancelRoom(int roomId) {
-        Room room = roomRepository.getRoom(roomId);
+        Room room = roomRepository.findRoomById(roomId);
 
         if (room == null) {
             return String.format("Room %d does not exist.", roomId);

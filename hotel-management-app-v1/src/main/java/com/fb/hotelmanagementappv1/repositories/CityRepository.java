@@ -15,11 +15,11 @@ public class CityRepository {
     }
 
     //Methods
-    public void addCity(City paramCity){
+    public void saveCity(City paramCity){
         dataInititalization.getCities().add(paramCity);
     }
 
-    public City getCity(int id){
+    public City findCityById(int id){
         for (City city : dataInititalization.getCities()) {
             if (city.getId() == id) {
                 return city;
@@ -28,7 +28,7 @@ public class CityRepository {
         return null;
     }
 
-    public List<City> getAllCities(){
+    public List<City> findAllCities(){
         return dataInititalization.getCities();
     }
 }
