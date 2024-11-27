@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -23,8 +24,12 @@ public class UserController {
 
     //Hotel-related Methods
     @GetMapping("/hotels")
-    public List<Hotel> getAllHotels(){
-        return userService.getAllHotels();
+    public List<Hotel> getHotels(@RequestParam(value = "cityId", required = false) Integer cityId) {
+        if (cityId != null) {
+            return userService.getHotelsByCityId(cityId);
+        } else {
+            return userService.getAllHotels();
+        }
     }
 
     @GetMapping("/hotels/{hotelId}")
