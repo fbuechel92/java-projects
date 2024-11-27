@@ -39,7 +39,11 @@ public class UserService {
     }
 
     public List<Room> getRoomsByHotelId(int hotelId){
-        return roomRepository.findRoomsByHotelId(hotelId);
+        Hotel hotel = hotelRepository.findHotelById(hotelId);
+        if (hotel != null) {
+            return hotel.getRooms();
+        }
+        return null;
     }
 
     //Booking-related Methods

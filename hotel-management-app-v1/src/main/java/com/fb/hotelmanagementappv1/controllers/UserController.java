@@ -38,7 +38,7 @@ public class UserController {
     }
 
     //Room-related Methods
-    @GetMapping("/rooms/{hotelId}")
+    @GetMapping("/hotels/{hotelId}/rooms")
     public List<Room> getRoomsByHotelId(@PathVariable int hotelId){
         return userService.getRoomsByHotelId(hotelId);
     }
