@@ -19,6 +19,7 @@ public class DataInititalization {
         cities = initializeCities();
         hotels = initializeHotels();
         rooms = initializeRooms();
+        associateRoomsWithHotels();
     }
 
     private List<City> initializeCities() {
@@ -154,6 +155,19 @@ public class DataInititalization {
         rooms.add(new Room(49, true, 50, 4, true, false, 10));
         rooms.add(new Room(50, false, 60, 1, false, true, 10));
         return rooms;
+    }
+
+    //Method to associate rooms with hotels
+    private void associateRoomsWithHotels() {
+        for (Hotel hotel : hotels) {
+            List<Room> hotelRooms = new ArrayList<>();
+            for (Room room : rooms) {
+                if (room.getHotelId() == hotel.getId()) {
+                    hotelRooms.add(room);
+                }
+            }
+            hotel.setRooms(hotelRooms);
+        }
     }
 
     //Methods to access the initialized data
