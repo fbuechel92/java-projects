@@ -1,7 +1,9 @@
 package com.fb.hotelmanagementappv1.models;
 
+import jakarta.persistence.Entity;
 import java.util.List;
 
+@Entity
 public class City {
     private int id;
     private String name;

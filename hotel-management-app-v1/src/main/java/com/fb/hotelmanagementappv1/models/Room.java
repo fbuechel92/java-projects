@@ -1,5 +1,8 @@
 package com.fb.hotelmanagementappv1.models;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class Room {
     private int id;
     private boolean isOccupied;
