@@ -8,6 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RoomRepository extends JpaRepository<Room, Integer> {
     // Custom query methods
-    Room findById(int roomId);
     List<Room> findByHotelId(int hotelId);
 }
