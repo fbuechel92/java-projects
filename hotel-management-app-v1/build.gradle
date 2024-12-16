@@ -25,6 +25,10 @@ dependencies {
     runtimeOnly 'com.h2database:h2'
 }
 
+springBoot {
+    mainClass = 'com.fb.hotelmanagementappv1.HotelManagementAppV1Application'
+}
+
 tasks.named('test') {
     useJUnitPlatform()
 }
