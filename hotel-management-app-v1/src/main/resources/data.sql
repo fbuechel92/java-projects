@@ -96,4 +96,4 @@ INSERT INTO room (id, is_occupied, room_size, number_of_beds, has_balcony, has_t
 INSERT INTO room (id, is_occupied, room_size, number_of_beds, has_balcony, has_tv, hotel_id) VALUES (21, true, 20, 1, true, false, 5);
 INSERT INTO room (id, is_occupied, room_size, number_of_beds, has_balcony, has_tv, hotel_id) VALUES (22, false, 30, 2, false, true, 5);
 INSERT INTO room (id, is_occupied, room_size, number_of_beds, has_balcony, has_tv, hotel_id) VALUES (23, true, 40, 3, true, false, 5);
-INSERT INTO room (id, is_occupied, room_size, number_of_beds, has_balcony, has_tv, hotel_id) VALUES (24, false, 50, 4, false, true, 5
+INSERT INTO room (id, is_occupied, room_size, number_of_beds, has_balcony, has_tv, hotel_id) VALUES (24, false, 50, 4, false, true, 5);
