@@ -5,6 +5,7 @@ import com.fb.hotelmanagementappv1.models.Room;
 import com.fb.hotelmanagementappv1.repositories.HotelRepository;
 import com.fb.hotelmanagementappv1.repositories.RoomRepository;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,54 +23,52 @@ public class UserService {
 
     //Hotel-related Methods
     public Hotel getHotelById(int hotelId){
-        return hotelRepository.findHotelById(hotelId);
+        return hotelRepository.findById(hotelId).orElse(null);
     }
 
     public List<Hotel> getHotelsByCityId(int cityId){
-        return hotelRepository.findHotelsByCityId(cityId);
+        return hotelRepository.findByCityId(cityId);
     }
 
     public List<Hotel> getAllHotels(){
-        return hotelRepository.findAllHotels();
+        return hotelRepository.findAll();
     }
 
     //Room-related Methods
     public Room getRoomById(int roomId){
-        return roomRepository.findRoomById(roomId);
+        return roomRepository.findById(roomId).orElse(null);
     }
 
     public List<Room> getRoomsByHotelId(int hotelId){
-        Hotel hotel = hotelRepository.findHotelById(hotelId);
-        if (hotel != null) {
-            return hotel.getRooms();
-        }
-        return null;
+        return roomRepository.findByHotelId(hotelId);
     }
 
     //Booking-related Methods
     public String bookRoom(int roomId) {
-        Room room = roomRepository.findRoomById(roomId);
-
-        if (room == null) {
+        Optional<Room> roomOptional = roomRepository.findById(roomId);
+        if (!roomOptional.isPresent()) {
             return String.format("Room %d does not exist.", roomId);
         }
-        if (room.isOccupied() == true) {
+        Room room = roomOptional.get();
+        if (room.isOccupied()) {
             return String.format("Room %d is already occupied.", roomId);
         }
-        roomRepository.updateOccupied(roomId, true);
+        room.setOccupied(true);
+        roomRepository.save(room);
         return String.format("Room %d has been successfully booked.", roomId);
     }
 
     public String cancelRoom(int roomId) {
-        Room room = roomRepository.findRoomById(roomId);
-
-        if (room == null) {
+        Optional<Room> roomOptional = roomRepository.findById(roomId);
+        if (!roomOptional.isPresent()) {
             return String.format("Room %d does not exist.", roomId);
         }
-        if (room.isOccupied() == false) {
+        Room room = roomOptional.get();
+        if (!room.isOccupied()) {
             return String.format("Room %d is not booked. Cancellation not successful.", roomId);
         }
-        roomRepository.updateOccupied(roomId, false);
-        return String.format("Cancellation for room %d has been cancelled.", roomId);
+        room.setOccupied(false);
+        roomRepository.save(room);
+        return String.format("Cancellation for room %d has been successfully processed.", roomId);
     }
 }

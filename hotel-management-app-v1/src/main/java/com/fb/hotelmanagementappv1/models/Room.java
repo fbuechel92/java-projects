@@ -1,23 +1,40 @@
 package com.fb.hotelmanagementappv1.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+@Entity
 public class Room {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private boolean isOccupied;
     private int roomSize;
     private int numberOfBeds;
     private boolean hasBalcony;
     private boolean hasTV;
-    private int hotelId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "hotel_id")  // FK in room table
+    private Hotel hotel;
 
     //Constructor
-    public Room(int id, boolean isOccupied, int roomSize, int numberOfBeds, boolean hasBalcony, boolean hasTV, int hotelId){
+    public Room(int id, boolean isOccupied, int roomSize, int numberOfBeds, boolean hasBalcony, boolean hasTV){
         this.id = id;
         this.isOccupied = isOccupied;
         this.roomSize = roomSize;
         this.numberOfBeds = numberOfBeds;
         this.hasBalcony = hasBalcony;
         this.hasTV = hasTV;
-        this.hotelId = hotelId;
+    }
+
+    public Room(){
     }
 
     //Getter methods
@@ -43,10 +60,6 @@ public class Room {
 
     public boolean hasTV(){
         return hasTV;
-    }
-
-    public int getHotelId(){
-        return hotelId;
     }
 
     //Setter Methods
